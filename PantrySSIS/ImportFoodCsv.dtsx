@@ -1,0 +1,2058 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/22/2020 4:46:48 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-D9GIGQ1"
+  DTS:CreatorName="DESKTOP-D9GIGQ1\wagne"
+  DTS:DTSID="{AE25F7BF-1212-4D35-AFEF-517637A7F309}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{AC91F073-BF2B-43E0-8DF8-8BBCB150F962}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Data Conversion Error Log Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B09C40D6-F882-46DB-9709-EB759B4ADE97}"
+      DTS:ObjectName="Data Conversion Error Log Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\wagne\Pantry\Logs\DataConversionErrorLog.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Action"
+              DTS:DTSID="{4F584C85-8614-465D-9DA4-4E78091C6CA1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Quantity"
+              DTS:DTSID="{08BA2145-F0CE-4A70-8FC8-09F2BCA59791}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Brand"
+              DTS:DTSID="{0E975D46-930B-4572-81D6-EFD30D832F91}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Storage"
+              DTS:DTSID="{2E81E8F1-D530-406C-9A03-E6DF5552C0AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Description"
+              DTS:DTSID="{A976F6B2-3F57-4CC6-814B-FB06657EB462}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Size"
+              DTS:DTSID="{D077511D-65AD-4349-9C92-F99D33D91CBA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Units"
+              DTS:DTSID="{D38E20E3-11E4-4DE9-8391-87EF892BEFBE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ExpirationDate"
+              DTS:DTSID="{5C9BEBC5-24A3-4CDA-B120-3B630ED239B1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cost"
+              DTS:DTSID="{9318223B-8CEB-4E8E-A1E2-73D7DD1D2FC8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Category"
+              DTS:DTSID="{66235499-6CB1-4882-98AF-C249276DE3FA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Notes"
+              DTS:DTSID="{687E3F2B-ADCA-4918-B68F-2E935A5AD4E2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ActionDate"
+              DTS:DTSID="{F99565A9-56D5-48E9-916E-406EB606C2FA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{7D71E8F0-85F2-4050-B088-60EBFF2FAD69}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{FBBBDC38-3D37-4556-B6BB-EB481C314796}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-D9GIGQ1\SQLEXPRESS.DPantry]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3BE6ADE1-FD0D-40B1-BA34-CCAC9118D25A}"
+      DTS:ObjectName="DESKTOP-D9GIGQ1\SQLEXPRESS.DPantry">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-D9GIGQ1\SQLEXPRESS;Initial Catalog=DPantry;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Food.csv Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{6B1AC93C-78C3-4795-86FF-97414BA2A712}"
+      DTS:ObjectName="Food.csv Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\wagne\Food.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Action Date"
+              DTS:DTSID="{BC283DCB-1C16-4961-BA3B-9A579CAF25F6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Action"
+              DTS:DTSID="{78C84B2F-598E-4708-B8F9-35B0A4F4FD67}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Quantity"
+              DTS:DTSID="{C8B8C5AD-D005-48FD-8792-5DBEC2736F61}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Brand"
+              DTS:DTSID="{3CC9A779-D2E6-4AD6-9587-ED90709BF81C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Storage"
+              DTS:DTSID="{532D853B-645C-4AFE-BAEB-804467B4F46D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Description"
+              DTS:DTSID="{1A1A697A-5AB8-4EEF-B3FC-AF4B3E6E40D7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Size"
+              DTS:DTSID="{AA563643-49E3-44F9-B39C-A8B861F483CA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Units"
+              DTS:DTSID="{563154A1-97BC-4FCE-A76C-57EAAF04528E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Expiration Date"
+              DTS:DTSID="{EC37320F-89C0-4F7B-980E-1BE5D8ED4A18}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cost"
+              DTS:DTSID="{7DE17741-18B6-4FA2-B36E-0EB42585816C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Category"
+              DTS:DTSID="{FC205F33-3FC9-4B2B-8D6A-890587ACB40E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Notes"
+              DTS:DTSID="{C1D62DEE-7520-4E68-AB1C-B8914BE2414F}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Null Checking Error Log Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{4626832F-D2FD-4092-9D1B-8EE14FCB5B68}"
+      DTS:ObjectName="Null Checking Error Log Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\wagne\Pantry\Logs\NullCheckingErrorLog.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Action"
+              DTS:DTSID="{D58196A1-8BD6-446B-8914-1811F1F37402}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Quantity"
+              DTS:DTSID="{80E93DED-6C28-4711-BA3D-0E9FC1D72217}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Brand"
+              DTS:DTSID="{69D82075-B288-4847-9C63-C780FEE6DC0D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Storage"
+              DTS:DTSID="{E3F0E097-702A-406E-AC29-1ACD328F7839}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Description"
+              DTS:DTSID="{CD0083BE-3CC1-41D0-866B-588139373228}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Size"
+              DTS:DTSID="{DC159F23-4BD0-4B83-95C6-9A151699671C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Units"
+              DTS:DTSID="{C514796C-3E1C-4F7E-8E6A-794AF23FB939}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ExpirationDate"
+              DTS:DTSID="{F04CCBC7-183C-4669-A7A3-93E1A6213454}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cost"
+              DTS:DTSID="{CE53574A-D7B8-41A9-8004-0D060956DA12}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Category"
+              DTS:DTSID="{AD06955C-3467-4025-92F8-9E75598E37E9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Notes"
+              DTS:DTSID="{50ECAF1F-2186-4C34-B794-15C4C4E11237}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ActionDate"
+              DTS:DTSID="{203F33BF-07F8-4242-94C0-D5E03EB5BA2D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{E0D6D359-D8E6-454B-8369-9A9B6A5A8821}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{A085BA96-EEA2-4D52-842B-373BB063FA94}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Food-Csv into DPantry-tblFoodCsvStaging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{AB0B4A0E-109F-49A4-93E6-346B1F1F31C6}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Food-Csv into DPantry-tblFoodCsvStaging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Data Converion Error Log"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Data Conversion Error Log Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Data Conversion Error Log Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].Columns[Action]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Action"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[Action]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Action]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].Columns[Quantity]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Quantity"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[Quantity]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Quantity]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].Columns[Brand]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Brand"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[Brand]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Brand]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].Columns[Storage]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Storage"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[Storage]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Storage]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].Columns[Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Description"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[Description]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Description]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].Columns[Size]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Size"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[Size]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Size]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].Columns[Units]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Units"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[Units]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Units]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].Columns[ExpirationDate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ExpirationDate"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[ExpirationDate]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[ExpirationDate]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].Columns[Cost]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Cost"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[Cost]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Cost]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].Columns[Category]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Category"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[Category]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Category]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].Columns[Notes]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Notes"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[Notes]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Notes]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].Columns[ActionDate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ActionDate"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[ActionDate]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[ActionDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[Action]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Action" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[Quantity]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[Brand]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Brand" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[Storage]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Storage" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[Description]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[Size]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Size" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[Units]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Units" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[ExpirationDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ExpirationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[Cost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Cost" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[Category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Category" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[Notes]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Notes" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input].ExternalColumns[ActionDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ActionDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Inputs[Data Conversion Input].Columns[Quantity]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Quantity"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Quantity]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Inputs[Data Conversion Input].Columns[ExpirationDate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ExpirationDate"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[ExpirationDate]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Inputs[Data Conversion Input].Columns[Size]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Size"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Size]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Inputs[Data Conversion Input].Columns[Cost]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Cost"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Cost]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Inputs[Data Conversion Input].Columns[ActionDate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ActionDate"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[ActionDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Output].Columns[QualityInt]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Output].Columns[QualityInt]"
+                      name="QualityInt"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Quantity]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Output].Columns[ExpirationDateDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Output].Columns[ExpirationDateDate]"
+                      name="ExpirationDateDate"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[ExpirationDate]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Output].Columns[SizeDecimal]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Output].Columns[SizeDecimal]"
+                      name="SizeDecimal"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Size]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Output].Columns[CostDecimal]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Output].Columns[CostDecimal]"
+                      name="CostDecimal"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Cost]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Output].Columns[ActionDateDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Output].Columns[ActionDateDate]"
+                      name="ActionDateDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[ActionDate]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Derived Column.Inputs[Derived Column Input].Columns[Cost]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Cost"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Cost]"
+                      truncationRowDisposition="RedirectRow"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Cost]} == "?" ? NULL(DT_DECIMAL,0) : (DT_DECIMAL,0)#{Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Cost]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">Cost == "?" ? NULL(DT_DECIMAL,0) : (DT_DECIMAL,0)Cost</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Derived Column.Inputs[Derived Column Input].Columns[ActionDate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ActionDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[ActionDate]"
+                      truncationRowDisposition="RedirectRow"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[ActionDate]} == "?" ? NULL(DT_DATE) : (DT_DATE)#{Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[ActionDate]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ActionDate == "?" ? NULL(DT_DATE) : (DT_DATE)ActionDate</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Derived Column.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Food.csv Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Food.csv Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Action]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Action]"
+                      length="50"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Action]"
+                      name="Action"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Quantity]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Quantity]"
+                      length="50"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Quantity]"
+                      name="Quantity"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Brand]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Brand]"
+                      length="50"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Brand]"
+                      name="Brand"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Storage]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Storage]"
+                      length="50"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Storage]"
+                      name="Storage"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Description]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Description]"
+                      length="50"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Description]"
+                      name="Description"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Size]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Size]"
+                      length="50"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Size]"
+                      name="Size"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Units]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Units]"
+                      length="50"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Units]"
+                      name="Units"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[ExpirationDate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Expiration Date]"
+                      length="50"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[ExpirationDate]"
+                      name="ExpirationDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Cost]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Cost]"
+                      length="50"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Cost]"
+                      name="Cost"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Category]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Category]"
+                      length="50"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Category]"
+                      name="Category"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Notes]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Notes]"
+                      length="50"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Notes]"
+                      name="Notes"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[ActionDate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Action Date]"
+                      length="50"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[ActionDate]"
+                      name="ActionDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Action]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Action" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Quantity]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Brand]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Brand" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Storage]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Storage" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Description]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Size]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Size" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Units]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Units" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Expiration Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Expiration Date" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Cost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Cost" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Category" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Notes]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Notes" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Action Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Action Date" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Null Checking Error Log"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Null Checking Error Log Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Null Checking Error Log Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].Columns[Action]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Action"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[Action]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Action]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].Columns[Quantity]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Quantity"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[Quantity]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Quantity]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].Columns[Brand]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Brand"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[Brand]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Brand]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].Columns[Storage]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Storage"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[Storage]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Storage]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].Columns[Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Description"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[Description]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Description]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].Columns[Size]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Size"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[Size]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Size]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].Columns[Units]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Units"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[Units]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Units]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].Columns[ExpirationDate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ExpirationDate"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[ExpirationDate]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[ExpirationDate]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].Columns[Cost]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Cost"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[Cost]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Cost]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].Columns[Category]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Category"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[Category]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Category]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].Columns[Notes]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Notes"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[Notes]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Notes]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].Columns[ActionDate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ActionDate"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[ActionDate]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[ActionDate]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[Action]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Action" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[Quantity]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[Brand]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Brand" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[Storage]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Storage" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[Description]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[Size]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Size" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[Units]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Units" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[ExpirationDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ExpirationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[Cost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Cost" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[Category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Category" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[Notes]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Notes" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[ActionDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ActionDate" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination"
+              componentClassID="Microsoft.SQLServerDestination"
+              contactInfo="SQL Server Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
+              description="SQL Server Destination"
+              name="SQL Server Destination"
+              version="5">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.String"
+                  description="The name of the database object to copy data into."
+                  expressionType="Notify"
+                  name="BulkInsertTableName">[dbo].[tblFoodCsvStaging]</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies that any constraints on the destination object are checked during the data copy operation. Corresponds to the bulk insert CHECK_CONSTRAINTS option."
+                  name="BulkInsertCheckConstraints">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of the first row to copy. Corresponds to the bulk insert FIRSTROW option."
+                  expressionType="Notify"
+                  name="BulkInsertFirstRow">-1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies that any insert triggers defined on the destination object will execute during the data copy. Corresponds to the bulk insert FIRE_TRIGGERS option."
+                  name="BulkInsertFireTriggers">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Corresponds to the bulk insert KEEPIDENTITY option."
+                  name="BulkInsertKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null copied to the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="BulkInsertKeepNulls">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of the last row to copy. Corresponds to the bulk insert LASTROW option."
+                  expressionType="Notify"
+                  name="BulkInsertLastRow">-1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of syntax errors and compilation errors that can occur before the data copy operation is canceled. Each row that cannot be copied is ignored and counted as one error. Corresponds to the bulk insert MAXERRORS option."
+                  name="BulkInsertMaxErrors">-1</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies how the data to be copied is sorted. Corresponds to the bulk insert ORDER option."
+                  expressionType="Notify"
+                  name="BulkInsertOrder"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies that a table-level lock is acquired for the duration of the data copy operation. Corresponds to the bulk insert TABLOCK option."
+                  name="BulkInsertTablock">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies in seconds the amount of time the SQL Destination adapter will wait before terminating if there is no data available for insertion.  A timeout value of 0 means the SQL Destination adapter will not time out."
+                  expressionType="Notify"
+                  name="Timeout">30</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion."
+                  name="MaxInsertCommitSize">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-D9GIGQ1\SQLEXPRESS.DPantry]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-D9GIGQ1\SQLEXPRESS.DPantry]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input]"
+                  hasSideEffects="true"
+                  name="SQL Server Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[Action]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Action"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Action]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Action]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[Brand]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Brand"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Brand]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Brand]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[Storage]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Storage"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Storage]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Storage]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Description"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Description]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Description]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[Units]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Units"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Units]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Units]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[Category]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Category"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Category]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Category]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[Notes]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Notes"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Notes]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Notes]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[QualityInt]"
+                      cachedDataType="i4"
+                      cachedName="QualityInt"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Quantity]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Output].Columns[QualityInt]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[SizeDecimal]"
+                      cachedDataType="decimal"
+                      cachedName="SizeDecimal"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Size]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Output].Columns[SizeDecimal]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[ExpirationDateDate]"
+                      cachedDataType="dbDate"
+                      cachedName="ExpirationDateDate"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[ExpirationDate]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Output].Columns[ExpirationDateDate]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[CostDecimal]"
+                      cachedDataType="decimal"
+                      cachedName="CostDecimal"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Cost]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Output].Columns[CostDecimal]" />
+                    <inputColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[ActionDateDate]"
+                      cachedDataType="dbDate"
+                      cachedName="ActionDateDate"
+                      externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[ActionDate]"
+                      lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Output].Columns[ActionDateDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Action]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Action" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Quantity]"
+                      dataType="i4"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Brand]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Brand" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Storage]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="Storage" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Description]"
+                      codePage="1252"
+                      dataType="str"
+                      length="250"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Size]"
+                      dataType="numeric"
+                      name="Size"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Units]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="Units" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[ExpirationDate]"
+                      dataType="dbDate"
+                      name="ExpirationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Cost]"
+                      dataType="numeric"
+                      name="Cost"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="Category" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Notes]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1000"
+                      name="Notes" />
+                    <externalMetadataColumn
+                      refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[ActionDate]"
+                      dataType="dbDate"
+                      name="ActionDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Food-Csv into DPantry-tblFoodCsvStaging.Paths[Data Conversion Error Output]"
+              endId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log.Inputs[Flat File Destination Input]"
+              name="Data Conversion Error Output"
+              startId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Error Output]" />
+            <path
+              refId="Package\Food-Csv into DPantry-tblFoodCsvStaging.Paths[Data Conversion Output]"
+              endId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Food-Csv into DPantry-tblFoodCsvStaging.Paths[Derived Column Error Output]"
+              endId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log.Inputs[Flat File Destination Input]"
+              name="Derived Column Error Output"
+              startId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Derived Column.Outputs[Derived Column Error Output]" />
+            <path
+              refId="Package\Food-Csv into DPantry-tblFoodCsvStaging.Paths[Derived Column Output]"
+              endId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Food-Csv into DPantry-tblFoodCsvStaging.Paths[Flat File Source Output]"
+              endId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Derived Column.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="275,42"
+          Id="Package\Food-Csv into DPantry-tblFoodCsvStaging"
+          TopLeft="39.8333462145588,36.466666074329" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Food-Csv into DPantry-tblFoodCsvStaging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="197,42"
+          Id="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log"
+          TopLeft="433.833316312897,210.900001632373" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log"
+          TopLeft="435.499984105429,105.700000557899" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Food-Csv into DPantry-tblFoodCsvStaging\Derived Column"
+          TopLeft="144.66666113668,100.833334090975" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source"
+          TopLeft="150.499999701977,25.0666666115655" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination"
+          TopLeft="129.66666292482,302.433335454729" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion"
+          TopLeft="145.499996821086,211.966667830679" />
+        <EdgeLayout
+          Id="Package\Food-Csv into DPantry-tblFoodCsvStaging.Paths[Flat File Source Output]"
+          TopLeft="224.783330419329,66.6666666115655">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.1666674794091"
+              Start="0,0"
+              End="0,26.6666674794091">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.6666674794091" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Food-Csv into DPantry-tblFoodCsvStaging.Paths[Derived Column Output]"
+          TopLeft="222.283328978883,142.433334090975">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,69.5333337397046"
+              Start="0,0"
+              End="0,62.0333337397046">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.0333337397046" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Food-Csv into DPantry-tblFoodCsvStaging.Paths[Derived Column Error Output]"
+          TopLeft="297.46666113668,124.066667324437">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="138.033322968748,0"
+              Start="0,0"
+              End="130.533322968748,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="130.533322968748,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0.305274765624006,5,129.9227734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Food-Csv into DPantry-tblFoodCsvStaging.Paths[Data Conversion Output]"
+          TopLeft="223.383329872953,253.566667830679">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.8666676240499"
+              Start="0,0"
+              End="0,41.3666676240499">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.3666676240499" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Food-Csv into DPantry-tblFoodCsvStaging.Paths[Data Conversion Error Output]"
+          TopLeft="301.499996821086,232.233334731526">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="132.333319491811,0"
+              Start="0,0"
+              End="124.833319491811,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="124.833319491811,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-3.66972697284449,5,132.1727734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
