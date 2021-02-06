@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{AC91F073-BF2B-43E0-8DF8-8BBCB150F962}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{E490023C-F8CF-42E5-8804-BA144FE465F1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -445,6 +445,23 @@
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0906438E-9012-460B-8041-D36EEFD1E958}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3BE6ADE1-FD0D-40B1-BA34-CCAC9118D25A}"
+          SQLTask:SqlStatementSource="DELETE FROM tblFoodCsvStaging;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Food-Csv into DPantry-tblFoodCsvStaging"
       DTS:CreationName="Microsoft.Pipeline"
@@ -1881,6 +1898,16 @@
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{16D1D9E8-56F7-4256-9DC4-91BF5C8E2A17}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Food-Csv into DPantry-tblFoodCsvStaging" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -1892,11 +1919,37 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="275,42"
+          Size="287,42"
           Id="Package\Food-Csv into DPantry-tblFoodCsvStaging"
-          TopLeft="39.8333462145588,36.466666074329" />
+          TopLeft="54.8333462145588,156.466666074329" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="114.5,52.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="198.916673107279,94.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.966666074329"
+              Start="0,0"
+              End="0,54.466666074329">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.466666074329" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -1922,7 +1975,7 @@
           Id="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source"
           TopLeft="150.499999701977,25.0666666115655" />
         <NodeLayout
-          Size="187,42"
+          Size="194,42"
           Id="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination"
           TopLeft="129.66666292482,302.433335454729" />
         <NodeLayout
@@ -1999,18 +2052,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Food-Csv into DPantry-tblFoodCsvStaging.Paths[Data Conversion Output]"
-          TopLeft="223.383329872953,253.566667830679">
+          TopLeft="225.083329872953,253.966667830679">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,48.8666676240499"
+              EndConnector="0,48.46666762405"
               Start="0,0"
-              End="0,41.3666676240499">
+              End="0,40.96666762405">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41.3666676240499" />
+                    End="0,40.96666762405" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
