@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="35"
-  DTS:VersionGUID="{F7D3741A-F69F-427C-8F9B-E61DE5BA3A0D}">
+  DTS:VersionBuild="36"
+  DTS:VersionGUID="{DE246622-C2F6-4F85-B1D2-0BC654E0D934}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2007,7 +2007,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{3BE6ADE1-FD0D-40B1-BA34-CCAC9118D25A}"
-          SQLTask:SqlStatementSource="INSERT INTO tblEvents (TypeId, ItemId, Quantity, Expiration, Cost)&#xA;&#xA;SELECT DISTINCT type.Id, item.Id, csv.Quantity, csv.ExpirationDate, csv.Cost&#xA;FROM tblFoodCsvStaging csv &#xA;   inner join tblEventTypes type on type.Description = csv.Action&#xA;   inner join tblItemTypes item on &#xA;      item.Description = csv.Description and&#xA;      item.Size = csv.Size and&#xA;      item.AdditionalInfo = csv.Notes&#xA;   inner join tblBrands brand on csv.Brand = brand.Description&#xA;   inner join tblStorageTypes storage on csv.Storage = storage.Description&#xA;   inner join tblUnitTypes unit on csv.Units = unit.Description&#xA;   inner join tblCategoryTypes category on csv.Category = category.Description;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="INSERT INTO tblEvents (TypeId, ItemId, Quantity, Expiration, Cost)&#xA;&#xA;SELECT DISTINCT type.Id, item.Id, csv.Quantity, csv.ExpirationDate, csv.Cost&#xA;FROM tblFoodCsvStaging csv &#xA;   inner join tblEventTypes type on type.Description = csv.Action&#xA;   inner join tblItemTypes item on &#xA;      item.Description = csv.Description &#xA;    and item.Size = csv.Size &#xA;    and (item.AdditionalInfo = csv.Notes or (item.AdditionalInfo is null and csv.Notes is null));&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
