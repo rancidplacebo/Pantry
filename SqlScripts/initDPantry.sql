@@ -77,16 +77,16 @@ CREATE TABLE tblEvents (
 );
 GO
 
-INSERT INTO tblStorageTypes (Description)
-VALUES ('jar'), ('can'), ('box'), ('bag'), ('bottle');
+--INSERT INTO tblStorageTypes (Description)
+--VALUES ('jar'), ('can'), ('box'), ('bag'), ('bottle');
 
-INSERT INTO tblUnitTypes (Description)
-VALUES ('oz'), ('fl oz'), ('bars');
+--INSERT INTO tblUnitTypes (Description)
+--VALUES ('oz'), ('fl oz'), ('bars');
 
-INSERT INTO tblCategoryTypes (Description)
-VALUES ('vegetable'),('meat'),('fruit'),('pasta'),('soup'),
-       ('beans'),('snack'),('sauce'),('condiment'),('rice'),
-	   ('grain'),('meal');
+--INSERT INTO tblCategoryTypes (Description)
+--VALUES ('vegetable'),('meat'),('fruit'),('pasta'),('soup'),
+--       ('beans'),('snack'),('sauce'),('condiment'),('rice'),
+--	   ('grain'),('meal');
 
-INSERT INTO tblEventTypes (Description) 
-VALUES ('Add'),('Use'),('Give');
+--INSERT INTO tblEventTypes (Description) 
+--VALUES ('Add'),('Use'),('Give');

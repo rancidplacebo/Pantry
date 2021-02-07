@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{2429EF02-ED19-4604-8D7F-20C770E31473}">
+  DTS:VersionBuild="30"
+  DTS:VersionGUID="{B7F5F762-2E43-43FA-9163-CB6FFF45BD37}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1964,7 +1964,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Load tblBrands"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1998,12 +1998,29 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Load tblEventTypes"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{3BE6ADE1-FD0D-40B1-BA34-CCAC9118D25A}"
           SQLTask:SqlStatementSource="INSERT INTO tblEventTypes (Description)&#xA;SELECT DISTINCT Action&#xA;FROM tblFoodCsvStaging&#xA;where Action not in (select Description from tblEventTypes);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load tblItemTypes"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8C1DC9A2-678F-4F1B-A905-47D7AB73CEE3}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load tblItemTypes"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3BE6ADE1-FD0D-40B1-BA34-CCAC9118D25A}"
+          SQLTask:SqlStatementSource="INSERT INTO tblItemTypes (BrandId, StorageId, UnitId, CategoryId, Description, Size, AdditionalInfo)&#xA;&#xA;SELECT DISTINCT brand.Id, storage.Id, unit.Id, category.id, csv.Description, csv.Size, csv.Notes&#xA;FROM tblFoodCsvStaging csv &#xA;   inner join tblBrands brand on csv.Brand = brand.Description&#xA;   inner join tblStorageTypes storage on csv.Storage = storage.Description&#xA;   inner join tblUnitTypes unit on csv.Units = unit.Description&#xA;   inner join tblCategoryTypes category on csv.Category = category.Description&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -2015,7 +2032,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Load tblStorageTypes"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2032,7 +2049,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Load tblUnitTypes"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2078,35 +2095,43 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{A091E883-FF72-463B-85D5-2C77AEB348E1}"
-      DTS:From="Package\Food-Csv into DPantry-tblFoodCsvStaging"
+      DTS:DTSID="{D758AF5A-3F31-4CEA-BFB0-1EDB001F1DED}"
+      DTS:From="Package\Load tblBrands"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
       DTS:To="Package\Load tblCategoryTypes" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{DFC043A8-AA97-49FF-A385-C4AF12584010}"
-      DTS:From="Package\Food-Csv into DPantry-tblFoodCsvStaging"
+      DTS:DTSID="{A5E75371-2DCF-41A0-A3B1-CEC3BADEDF53}"
+      DTS:From="Package\Load tblCategoryTypes"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\Load tblEventTypes" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{6BAD4C6A-F613-444A-80AC-7F87CF0BC2FD}"
-      DTS:From="Package\Food-Csv into DPantry-tblFoodCsvStaging"
+      DTS:DTSID="{A35CEC9B-AAAB-43B9-A42A-4FEB867CA40A}"
+      DTS:From="Package\Load tblEventTypes"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
       DTS:To="Package\Load tblStorageTypes" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{3F350FBD-E43D-4D7D-AE3E-D679201776EF}"
-      DTS:From="Package\Food-Csv into DPantry-tblFoodCsvStaging"
+      DTS:DTSID="{E8174060-6BED-4011-A926-4E5806129C5C}"
+      DTS:From="Package\Load tblStorageTypes"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
       DTS:To="Package\Load tblUnitTypes" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{39916305-B6E7-4460-9480-178811B806E2}"
+      DTS:From="Package\Load tblUnitTypes"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Load tblItemTypes" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -2121,11 +2146,31 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="287,42"
+          Size="287.2,41.6"
           Id="Package\Food-Csv into DPantry-tblFoodCsvStaging"
           TopLeft="70.8333462145588,90.466666074329" />
         <NodeLayout
-          Size="193,42"
+          Size="152.8,41.6"
+          Id="Package\Load tblBrands"
+          TopLeft="139.333328134484,155.43333328512" />
+        <NodeLayout
+          Size="192.8,41.6"
+          Id="Package\Load tblCategoryTypes"
+          TopLeft="364.999992152055,158.43333328512" />
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Load tblEventTypes"
+          TopLeft="616.499990463257,162.899999979337" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\Load tblStorageTypes"
+          TopLeft="837.999989767869,161.833333264457" />
+        <NodeLayout
+          Size="168,41.6"
+          Id="Package\Load tblUnitTypes"
+          TopLeft="1059.33332277007,163.833333264457" />
+        <NodeLayout
+          Size="192.8,41.6"
           Id="Package\Truncate Staging Table"
           TopLeft="111.5,22.5" />
         <EdgeLayout
@@ -2150,36 +2195,20 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="153,42"
-          Id="Package\Load tblBrands"
-          TopLeft="8.5,161.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="144.583346214559,132.466666074329">
+          TopLeft="215.083337174521,132.066666074329">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-59.5833462145588,29.033333925671"
+              EndConnector="0,23.3666672107909"
               Start="0,0"
-              End="-59.5833462145588,21.533333925671">
+              End="0,15.8666672107909">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,5.85596491147635" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,5.85596491147635"
-                    Point2="0,9.85596491147635"
-                    Point3="-4,9.85596491147635" />
-                  <mssgle:LineSegment
-                    End="-55.5833462145588,9.85596491147635" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-55.5833462145588,9.85596491147635"
-                    Point2="-59.5833462145588,9.85596491147635"
-                    Point3="-59.5833462145588,13.8559649114763" />
-                  <mssgle:LineSegment
-                    End="-59.5833462145588,21.533333925671" />
+                    End="0,15.8666672107909" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2188,36 +2217,20 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="193,42"
-          Id="Package\Load tblCategoryTypes"
-          TopLeft="167.5,164.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="214.333346214559,132.466666074329">
+          TopLeft="292.133328134484,177.73333328512">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="49.6666537854412,32.033333925671"
+              EndConnector="72.8666640175711,0"
               Start="0,0"
-              End="49.6666537854412,24.533333925671">
+              End="65.3666640175711,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.0166669628355" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.0166669628355"
-                    Point2="0,16.0166669628355"
-                    Point3="4,16.0166669628355" />
-                  <mssgle:LineSegment
-                    End="45.6666537854412,16.0166669628355" />
-                  <mssgle:CubicBezierSegment
-                    Point1="45.6666537854412,16.0166669628355"
-                    Point2="49.6666537854412,16.0166669628355"
-                    Point3="49.6666537854412,20.0166669628355" />
-                  <mssgle:LineSegment
-                    End="49.6666537854412,24.533333925671" />
+                    End="65.3666640175711,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2226,36 +2239,20 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="176,42"
-          Id="Package\Load tblEventTypes"
-          TopLeft="376.5,165.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="284.083346214559,132.466666074329">
+          TopLeft="557.799992152055,181.466666632229">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="180.416653785441,33.033333925671"
+              EndConnector="58.6999983112019,0"
               Start="0,0"
-              End="180.416653785441,25.533333925671">
+              End="51.1999983112019,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,7.21384753518176" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,7.21384753518176"
-                    Point2="0,11.2138475351818"
-                    Point3="4,11.2138475351818" />
-                  <mssgle:LineSegment
-                    End="176.416653785441,11.2138475351818" />
-                  <mssgle:CubicBezierSegment
-                    Point1="176.416653785441,11.2138475351818"
-                    Point2="180.416653785441,11.2138475351818"
-                    Point3="180.416653785441,15.2138475351818" />
-                  <mssgle:LineSegment
-                    End="180.416653785441,25.533333925671" />
+                    End="51.1999983112019,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2264,40 +2261,20 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="168,42"
-          Id="Package\Load tblUnitTypes"
-          TopLeft="793.5,172.5" />
-        <NodeLayout
-          Size="187,42"
-          Id="Package\Load tblStorageTypes"
-          TopLeft="580.5,170.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="260.833346214559,132.466666074329">
+          TopLeft="792.499990463257,183.166666621897">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="413.166653785441,38.033333925671"
+              EndConnector="45.4999993046125,0"
               Start="0,0"
-              End="413.166653785441,30.533333925671">
+              End="37.9999993046125,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.339847778753" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.339847778753"
-                    Point2="0,15.339847778753"
-                    Point3="4,15.339847778753" />
-                  <mssgle:LineSegment
-                    End="409.166653785441,15.339847778753" />
-                  <mssgle:CubicBezierSegment
-                    Point1="409.166653785441,15.339847778753"
-                    Point2="413.166653785441,15.339847778753"
-                    Point3="413.166653785441,19.339847778753" />
-                  <mssgle:LineSegment
-                    End="413.166653785441,30.533333925671" />
+                    End="37.9999993046125,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2308,30 +2285,44 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="307.333346214559,132.466666074329">
+          TopLeft="1025.19998976787,183.633333264457">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="570.166653785441,40.033333925671"
+              EndConnector="34.1333330021964,0"
               Start="0,0"
-              End="570.166653785441,32.533333925671">
+              End="26.6333330021964,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,6.42104826415663" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,6.42104826415663"
-                    Point2="0,10.4210482641566"
-                    Point3="4,10.4210482641566" />
+                    End="26.6333330021964,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Load tblItemTypes"
+          TopLeft="1061.33329137829,265.500002066294" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="1143.33330707418,205.433333264457">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0666688018376"
+              Start="0,0"
+              End="0,52.5666688018376">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="566.166653785441,10.4210482641566" />
-                  <mssgle:CubicBezierSegment
-                    Point1="566.166653785441,10.4210482641566"
-                    Point2="570.166653785441,10.4210482641566"
-                    Point3="570.166653785441,14.4210482641566" />
-                  <mssgle:LineSegment
-                    End="570.166653785441,32.533333925671" />
+                    End="0,52.5666688018376" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2349,29 +2340,29 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="156,42"
+          Id="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source"
+          TopLeft="150.499999701977,25.0666666115655" />
+        <NodeLayout
           Size="197,42"
           Id="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Converion Error Log"
           TopLeft="433.833316312897,210.900001632373" />
-        <NodeLayout
-          Size="189,42"
-          Id="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log"
-          TopLeft="435.499984105429,105.700000557899" />
         <NodeLayout
           Size="153,42"
           Id="Package\Food-Csv into DPantry-tblFoodCsvStaging\Derived Column"
           TopLeft="144.66666113668,100.833334090975" />
         <NodeLayout
-          Size="156,42"
-          Id="Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source"
-          TopLeft="150.499999701977,25.0666666115655" />
-        <NodeLayout
-          Size="194,42"
-          Id="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination"
-          TopLeft="129.66666292482,302.433335454729" />
+          Size="189,42"
+          Id="Package\Food-Csv into DPantry-tblFoodCsvStaging\Null Checking Error Log"
+          TopLeft="435.499984105429,105.700000557899" />
         <NodeLayout
           Size="156,42"
           Id="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion"
           TopLeft="145.499996821086,211.966667830679" />
+        <NodeLayout
+          Size="194,42"
+          Id="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination"
+          TopLeft="129.66666292482,302.433335454729" />
         <EdgeLayout
           Id="Package\Food-Csv into DPantry-tblFoodCsvStaging.Paths[Flat File Source Output]"
           TopLeft="224.783330419329,66.6666666115655">
@@ -2391,7 +2382,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2413,7 +2406,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2459,7 +2454,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
