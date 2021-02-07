@@ -17,10 +17,10 @@ CREATE TABLE tblFoodCsvStaging (
     Brand varchar(100) NOT NULL,
     Storage varchar(25) NOT NULL,
     Description varchar(250) NOT NULL,
-    Size decimal(18,0) NOT NULL,
+    Size decimal(18,2) NOT NULL,
     Units varchar(25) NOT NULL,
     ExpirationDate date NOT NULL,
-    Cost decimal(18,0),
+    Cost decimal(18,2),
     Category varchar(25) NOT NULL,
     Notes varchar(1000)
 )
@@ -62,7 +62,7 @@ CREATE TABLE tblItemTypes (
 	UnitId int FOREIGN KEY REFERENCES tblUnitTypes(Id) NOT NULL,
 	CategoryId int FOREIGN KEY REFERENCES tblCategoryTypes(Id) NOT NULL,
 	Description varchar(250) NOT NULL,
-	Size decimal NOT NULL,
+	Size decimal(18,2) NOT NULL,
 	AdditionalInfo varchar(1000)
 )
 GO
@@ -73,7 +73,7 @@ CREATE TABLE tblEvents (
 	ItemId int FOREIGN KEY REFERENCES tblItemTypes(Id) NOT NULL,
 	Quantity int NOT NULL,
 	Expiration Date NOT NULL,
-	Cost decimal,
+	Cost decimal(18,2),
 );
 GO
 

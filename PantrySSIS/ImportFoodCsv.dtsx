@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="33"
-  DTS:VersionGUID="{C6947110-29C5-47B6-AC11-83AFB5C3C607}">
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{F7D3741A-F69F-427C-8F9B-E61DE5BA3A0D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -795,6 +795,7 @@
                       errorRowDisposition="RedirectRow"
                       lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Output].Columns[SizeDecimal]"
                       name="SizeDecimal"
+                      scale="2"
                       truncationRowDisposition="RedirectRow">
                       <properties>
                         <property
@@ -815,6 +816,7 @@
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Output].Columns[CostDecimal]"
                       name="CostDecimal"
+                      scale="2"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -904,13 +906,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">#{Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Cost]} == "?" ? NULL(DT_DECIMAL,0) : (DT_DECIMAL,0)#{Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Cost]}</property>
+                          name="Expression">#{Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Cost]} == "?" ? NULL(DT_DECIMAL,2) : (DT_DECIMAL,2)#{Package\Food-Csv into DPantry-tblFoodCsvStaging\Flat File Source.Outputs[Flat File Source Output].Columns[Cost]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">Cost == "?" ? NULL(DT_DECIMAL,0) : (DT_DECIMAL,0)Cost</property>
+                          name="FriendlyExpression">Cost == "?" ? NULL(DT_DECIMAL,2) : (DT_DECIMAL,2)Cost</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -1833,6 +1835,7 @@
                       refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[SizeDecimal]"
                       cachedDataType="decimal"
                       cachedName="SizeDecimal"
+                      cachedScale="2"
                       externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Size]"
                       lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Output].Columns[SizeDecimal]" />
                     <inputColumn
@@ -1845,6 +1848,7 @@
                       refId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[CostDecimal]"
                       cachedDataType="decimal"
                       cachedName="CostDecimal"
+                      cachedScale="2"
                       externalMetadataColumnId="Package\Food-Csv into DPantry-tblFoodCsvStaging\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Cost]"
                       lineageId="Package\Food-Csv into DPantry-tblFoodCsvStaging\Data Conversion.Outputs[Data Conversion Output].Columns[CostDecimal]" />
                     <inputColumn
@@ -2003,7 +2007,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{3BE6ADE1-FD0D-40B1-BA34-CCAC9118D25A}"
-          SQLTask:SqlStatementSource="INSERT INTO tblEvents (TypeId, ItemId, Quantity, Expiration, Cost)&#xA;&#xA;SELECT DISTINCT type.Id, item.Id, csv.Quantity, csv.ExpirationDate, csv.Cost&#xA;FROM tblFoodCsvStaging csv &#xA;   inner join tblEventTypes type on type.Description = csv.Action&#xA;   inner join tblItemTypes item on &#xA;      item.Description = csv.Description and&#xA;      item.Size = csv.Size and&#xA;      item.AdditionalInfo = csv.Notes&#xA;   inner join tblBrands brand on csv.Brand = brand.Description&#xA;   inner join tblStorageTypes storage on csv.Storage = storage.Description&#xA;   inner join tblUnitTypes unit on csv.Units = unit.Description&#xA;   inner join tblCategoryTypes category on csv.Category = category.Description&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="INSERT INTO tblEvents (TypeId, ItemId, Quantity, Expiration, Cost)&#xA;&#xA;SELECT DISTINCT type.Id, item.Id, csv.Quantity, csv.ExpirationDate, csv.Cost&#xA;FROM tblFoodCsvStaging csv &#xA;   inner join tblEventTypes type on type.Description = csv.Action&#xA;   inner join tblItemTypes item on &#xA;      item.Description = csv.Description and&#xA;      item.Size = csv.Size and&#xA;      item.AdditionalInfo = csv.Notes&#xA;   inner join tblBrands brand on csv.Brand = brand.Description&#xA;   inner join tblStorageTypes storage on csv.Storage = storage.Description&#xA;   inner join tblUnitTypes unit on csv.Units = unit.Description&#xA;   inner join tblCategoryTypes category on csv.Category = category.Description;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
